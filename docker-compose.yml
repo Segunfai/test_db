@@ -1,0 +1,17 @@
+version: "3.9"
+services:
+  postgres:
+    container_name: accounts_db
+    image: postgres:16
+    environment:
+      POSTGRES_DB: "postgres"
+      POSTGRES_USER: "postgres"
+      POSTGRES_PASSWORD: "12345"
+      POSTGRES_HOST_AUTH_METHOD: "md5"  # ← Ключевая настройка!
+    ports:
+      - "5433:5432"
+    command: >
+      postgres 
+      -c password_encryption=md5
+      -c log_connections=on
+      -c log_disconnections=on
