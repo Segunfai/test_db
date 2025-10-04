@@ -34,15 +34,35 @@ JOIN "order" o ON c.id = o.customer_id;
 -- 6. Обновление цены товара
 UPDATE product SET price = 1600000.00 WHERE description = 'Toyota Camry';
 
+SELECT description, price
+FROM product p
+WHERE description = 'Toyota Camry';
+
 -- 7. Изменение статуса заказа
 UPDATE "order" SET status_id = 2 WHERE id = 1;
 UPDATE "order" SET status_id = 3 WHERE id = 3;
 
+SELECT o.id, o.status_id
+FROM "order" o
+WHERE o.id in (1,3);
+
 -- 8. Изменение количества на складе
 UPDATE product SET quantity = quantity - 1 WHERE id = 1;
+
+SELECT p.id, description, quantity
+FROM product p
+WHERE id = 1;
 
 -- 9. Удаление клиентов без заказов
 DELETE FROM customer WHERE id NOT IN (SELECT DISTINCT customer_id FROM "order");
 
+SELECT c.id, first_name, last_name
+FROM customer c
+WHERE id NOT IN (SELECT DISTINCT customer_id FROM "order");
+
 -- 10. Удаление заказа
 DELETE FROM "order" WHERE id = 1;
+
+SELECT o.id, product_id, customer_id
+FROM "order" o
+WHERE o.id = 1;
