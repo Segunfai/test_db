@@ -1,13 +1,13 @@
 version: "3.9"
 services:
   postgres:
-    container_name: accounts_db
+    container_name: test_orders_db
     image: postgres:16
     environment:
-      POSTGRES_DB: "postgres"
+      POSTGRES_DB: "test_orders_db"
       POSTGRES_USER: "postgres"
       POSTGRES_PASSWORD: "12345"
-      POSTGRES_HOST_AUTH_METHOD: "md5"  # ← Ключевая настройка!
+      POSTGRES_HOST_AUTH_METHOD: "md5"
     ports:
       - "5433:5432"
     command: >
