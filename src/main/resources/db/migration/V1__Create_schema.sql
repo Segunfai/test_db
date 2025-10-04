@@ -43,6 +43,6 @@ CREATE INDEX IF NOT EXISTS idx_order_customer_id ON "order"(customer_id);
 CREATE INDEX IF NOT EXISTS idx_order_date ON "order"(order_date);
 
 COMMENT ON TABLE product IS 'Таблица автомобилей';
-COMMENT ON COLUMN product.horse_power IS 'Мощность в лошадиных силах (до 160)';
+COMMENT ON COLUMN product.horse_power IS 'Мощность в лошадиных силах';
 COMMENT ON TABLE customer IS 'Таблица клиентов';
 COMMENT ON TABLE "order" IS 'Таблица заказов';

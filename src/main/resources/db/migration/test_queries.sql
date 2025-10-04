@@ -36,6 +36,7 @@ UPDATE product SET price = 1600000.00 WHERE description = 'Toyota Camry';
 
 -- 7. Изменение статуса заказа
 UPDATE "order" SET status_id = 2 WHERE id = 1;
+UPDATE "order" SET status_id = 3 WHERE id = 3;
 
 -- 8. Изменение количества на складе
 UPDATE product SET quantity = quantity - 1 WHERE id = 1;
