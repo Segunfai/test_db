@@ -32,7 +32,7 @@ public class App {
             ps1.setInt(5, 140);
             ps1.setString(6, "Хэтчбек");
             ps1.executeUpdate();
-            System.out.println("Добавлен товар ");
+            System.out.println("Товар добавлен");
 
             PreparedStatement ps2 = conn.prepareStatement("INSERT INTO customer (first_name, last_name, phone, email) VALUES (?, ?, ?, ?)");
             ps2.setString(1, "Александр");
@@ -42,14 +42,45 @@ public class App {
             ps2.executeUpdate();
             System.out.println("Клиент добавлен");
 
-            // 2. Создание заказа
-            PreparedStatement ps3 = conn.prepareStatement("INSERT INTO \"order\" (product_id, customer_id, quantity, status_id) VALUES (?, ?, ?, ?)");
-            ps3.setInt(1, 11); // Honda Civic
-            ps3.setInt(2, 11); // Александра
-            ps3.setInt(3, 1);
-            ps3.setInt(4, 1); // В обработке
-            ps3.executeUpdate();
-            System.out.println("Заказ создан");
+            // 2. Создание заказов
+            PreparedStatement psOrder = conn.prepareStatement(
+                    "INSERT INTO \"order\" (product_id, customer_id, quantity, status_id) VALUES (?, ?, ?, ?)"
+            );
+
+            int[] productIds = {1, 2, 1, 3, 1, 4, 2, 5, 1, 2, 3, 1, 4, 5, 2, 3, 1, 5, 4, 2, 11}; // 21 шт., 1 часто повторяется
+            int[] customerIds = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11}; // 21 шт.
+            int[] statuses = {
+                    1, // В обработке
+                    2, // Доставляется
+                    1,
+                    3, // Выполнен
+                    1,
+                    4, // Отменен
+                    2,
+                    3,
+                    1,
+                    2,
+                    3,
+                    1,
+                    4,
+                    2,
+                    3,
+                    1,
+                    2,
+                    4,
+                    3,
+                    1,
+                    1  // последний — новый клиент и товар
+            };
+
+            for (int i = 0; i < 21; i++) {
+                psOrder.setInt(1, productIds[i]);
+                psOrder.setInt(2, customerIds[i]);
+                psOrder.setInt(3, 1); // количество = 1
+                psOrder.setInt(4, statuses[i]);
+                psOrder.executeUpdate();
+            }
+            System.out.println("Добавлены заказы");
 
             // 3. Чтение последних 5 заказов
             Statement stmt = conn.createStatement();
