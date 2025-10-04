@@ -25,4 +25,5 @@ INSERT INTO product (description, price, quantity, category, horse_power, body_t
     ('Skoda Rapid', 950000.00, 4, 'Седан', 116, 'Седан'),
     ('Nissan Almera', 880000.00, 5, 'Седан', 110, 'Седан'),
     ('Mazda 3', 1400000.00, 3, 'Хэтчбек', 150, 'Хэтчбек'),
+    ('Volkswagen Tayron', 1650000.00, 4, 'Кроссовер', 150, 'Кроссовер'),
     ('Ford Focus', 1200000.00, 6, 'Хэтчбек', 125, 'Хэтчбек');

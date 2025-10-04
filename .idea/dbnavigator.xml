@@ -10,7 +10,11 @@
     <value-preview-pinned value="false" />
   </component>
   <component name="DBNavigator.Project.DatabaseAssistantManager">
-    <assistants />
+    <assistants>
+      <assistant-state connection-id="6f64ebb4-4f83-48a7-8a16-a3db857be7d5" default-profile-name="" selected-conversation-id="" assistant-type="GENERIC" availability="UNAVAILABLE" acknowledgement="NONE">
+        <conversations />
+      </assistant-state>
+    </assistants>
   </component>
   <component name="DBNavigator.Project.DatabaseBrowserManager">
     <autoscroll-to-editor value="false" />
@@ -19,8 +23,8 @@
     <loaded-nodes />
   </component>
   <component name="DBNavigator.Project.DatabaseConsoleManager">
-    <connection id="9a3f9ba4-4e08-4d77-bc5d-06ef77a7a4e0">
-      <console name="Connection" type="STANDARD" schema="test_orders_db" session="Main" />
+    <connection id="6f64ebb4-4f83-48a7-8a16-a3db857be7d5">
+      <console name="Connection 1" type="STANDARD" schema="test_orders_db" session="Main" />
     </connection>
   </component>
   <component name="DBNavigator.Project.DatabaseEditorStateManager">
@@ -30,7 +34,21 @@
     <open-files />
   </component>
   <component name="DBNavigator.Project.DatabaseSessionManager">
-    <connection id="9a3f9ba4-4e08-4d77-bc5d-06ef77a7a4e0" />
+    <connection id="6f64ebb4-4f83-48a7-8a16-a3db857be7d5" />
+  </component>
+  <component name="DBNavigator.Project.ExecutionManager">
+    <retain-sticky-names value="false" />
+  </component>
+  <component name="DBNavigator.Project.FileConnectionMappingManager">
+    <mapping file-url="file://$PROJECT_DIR$/src/main/resources/test_queries.sql" connection-id="6f64ebb4-4f83-48a7-8a16-a3db857be7d5" session-id="MAIN" current-schema="public" />
+  </component>
+  <component name="DBNavigator.Project.MethodExecutionManager">
+    <method-browser />
+    <execution-history>
+      <group-entries value="true" />
+      <execution-inputs />
+    </execution-history>
+    <execution-variables-cache />
   </component>
   <component name="DBNavigator.Project.ObjectQuickFilterManager">
     <last-used-operator value="EQUAL" />
@@ -38,9 +56,9 @@
   </component>
   <component name="DBNavigator.Project.Settings">
     <connections>
-      <connection source-id="" id="9a3f9ba4-4e08-4d77-bc5d-06ef77a7a4e0" active="true" signed="true">
+      <connection source-id="" id="6f64ebb4-4f83-48a7-8a16-a3db857be7d5" active="true" signed="true">
         <database>
-          <name value="Connection" />
+          <name value="Connection 1" />
           <description value="" />
           <database-type value="POSTGRES" />
           <config-type value="BASIC" />
